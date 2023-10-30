@@ -8,6 +8,9 @@ enum class Icon {
 }
 
 data class Diary(val s: String, val goal: Icon) {
-    val item: String,
+    val item: String = ""
     val icon: Icon
+        get() {
+            TODO()
+        }
 }
