@@ -6,4 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".DiaryActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/gtmain_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            tools:src="@android:drawable/ic_menu_agenda" />
+
+        <TextView
+            android:id="@+id/Dtitle"
+            android:layout_width="357dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:text="제목"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/image_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@android:drawable/btn_star"
+            tools:src="@android:drawable/ic_menu_gallery" />
+
+        <TextView
+            android:id="@+id/context"
+            android:layout_width="357dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="TextView" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
