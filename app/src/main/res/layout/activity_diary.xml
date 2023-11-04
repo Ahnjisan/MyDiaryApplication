@@ -24,6 +24,7 @@
             android:layout_height="46dp"
             android:layout_gravity="center"
             android:text="제목"
+            android:background="@drawable/dtitlechange"
             android:textSize="20sp" />
 
         <ImageButton
@@ -37,8 +38,9 @@
         <TextView
             android:id="@+id/context"
             android:layout_width="357dp"
-            android:layout_height="match_parent"
+            android:layout_height="554dp"
             android:layout_gravity="center"
+            android:background="@drawable/textviewchange"
             android:text="TextView" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
