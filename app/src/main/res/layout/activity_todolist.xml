@@ -4,43 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DiaryActivity">
+    tools:context=".Todolist">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-144dp">
 
         <ImageButton
-            android:id="@+id/gtmain_diary"
+            android:id="@+id/gtmain_Tdl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/btn_star"
             tools:src="@android:drawable/ic_menu_agenda" />
 
-        <TextView
-            android:id="@+id/Dtitle"
-            android:layout_width="357dp"
-            android:layout_height="46dp"
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="267dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="제목"
-            android:background="@drawable/dtitlechange"
-            android:textSize="20sp" />
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/image_bt"
+            android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="bottom|right"
             android:src="@android:drawable/btn_star"
-            tools:src="@android:drawable/ic_menu_gallery" />
-
-        <TextView
-            android:id="@+id/context"
-            android:layout_width="357dp"
-            android:layout_height="554dp"
-            android:layout_gravity="center"
-            android:background="@drawable/contextchange"
-            android:text="TextView" />
-    </LinearLayout>
+            tools:src="@android:drawable/ic_menu_add" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

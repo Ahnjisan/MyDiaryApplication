@@ -13,6 +13,11 @@
         android:theme="@style/Theme.MyDiaryApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Todolist"
+            android:exported="false"
+            android:label="@string/title_activity_todolist"
+            android:theme="@style/Theme.MyDiaryApplication" />
+        <activity
             android:name=".DiaryActivity"
             android:exported="false" />
         <activity
