@@ -12,11 +12,15 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/gtmain_diary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/btn_star"
-            tools:src="@android:drawable/ic_menu_agenda" />
+            android:id="@+id/imageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/calendar"
+            android:contentDescription="@string/imageButton_description"/>
 
         <TextView
             android:id="@+id/Dtitle"
@@ -29,16 +33,19 @@
 
         <ImageButton
             android:id="@+id/image_bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="right"
-            android:src="@android:drawable/btn_star"
-            tools:src="@android:drawable/ic_menu_gallery" />
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/picture"
+            android:contentDescription="@string/image_bt_description"/>
 
         <TextView
             android:id="@+id/context"
             android:layout_width="357dp"
-            android:layout_height="554dp"
+            android:layout_height="536dp"
             android:layout_gravity="center"
             android:background="@drawable/contextchange"
             android:text="TextView" />

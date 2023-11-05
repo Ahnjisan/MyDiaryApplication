@@ -15,15 +15,19 @@
 
         <ImageButton
             android:id="@+id/gtmain_Tdl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/btn_star"
-            tools:src="@android:drawable/ic_menu_agenda" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/calendar"
+            android:contentDescription="@string/gtmain_Tdl_description"/>
 
         <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="267dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/todolist_date"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:ems="10"
             android:inputType="text"
@@ -36,11 +40,15 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/todolist_add"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="bottom|right"
-            android:src="@android:drawable/btn_star"
-            tools:src="@android:drawable/ic_menu_add" />
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plus"
+            android:contentDescription="@string/todolist_add_description"/>
+
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
