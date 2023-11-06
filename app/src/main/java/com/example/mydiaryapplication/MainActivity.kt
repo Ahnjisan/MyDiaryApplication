@@ -7,20 +7,23 @@ import com.example.mydiaryapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     val items = arrayOf(
-        Diary("일정 추가하기", Icon.GOAL),
-        Diary("Todo list 작성하기", Icon.LIST),
-        Diary("일기 작성하기", Icon.NOTE),
-        Diary("이달의 목표 실천하기", Icon.SCHEDULE),
+        Item("일정 추가하기", EItem.SCHEDULE),
+        Item("Todo list 작성하기", EItem.CHECKLIST),
+        Item("일기 작성하기", EItem.PENCIL),
+        Item("이달의 목표 실천하기", EItem.REWARD)
     )
 
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.recMenu.layoutManager = LinearLayoutManager(this)
+        binding.recMenu.adapter = ItemAdapter(items)
 
-        binding.diaryItem.layoutManager = LinearLayoutManager(this)
-        binding.diaryItem.adapter = DiaryAdapter(items)
-        // 안지산 주석
+        binding.calendarView.setOnDateChangeListener{view, year, month, dayOfMonth->
+
+        }
+
     }
 }
