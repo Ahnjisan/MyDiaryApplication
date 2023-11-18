@@ -2,28 +2,42 @@ package com.example.mydiaryapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
 import com.example.mydiaryapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    val items = arrayOf(
-        Item("일정 추가하기", EItem.SCHEDULE),
-        Item("Todo list 작성하기", EItem.CHECKLIST),
-        Item("일기 작성하기", EItem.PENCIL),
-        Item("이달의 목표 실천하기", EItem.REWARD)
-    )
 
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.recMenu.layoutManager = LinearLayoutManager(this)
-        binding.recMenu.adapter = ItemAdapter(items)
+        replaceFragment(Home())
 
-        binding.calendarView.setOnDateChangeListener{view, year, month, dayOfMonth->
+        binding.bottomNavigationView.setOnItemSelectedListener {
 
+            when(it.itemId) {
+                R.id.calendar -> replaceFragment(Home())
+                R.id.schedule -> replaceFragment(Schedule())
+                R.id.list -> replaceFragment(Todolist())
+                R.id.diary -> replaceFragment(Diary())
+                R.id.goals -> replaceFragment(Goals())
+
+                else -> {
+
+                }
+            }
+            true
         }
 
+
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout, fragment)
+        fragmentTransaction.commit()
     }
 }

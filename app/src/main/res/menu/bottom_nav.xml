@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Calendar"
+        android:icon="@drawable/baseline_calendar_month_24"/>
+    <item
+        android:id="@+id/schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Schedule"
+        android:icon="@drawable/baseline_schedule_24"/>
+    <item
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Todo list"
+        android:icon="@drawable/baseline_checklist_24"/>
+
+    <item
+        android:id="@+id/diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Diary"
+        android:icon="@drawable/baseline_edit_note_24"/>
+
+    <item
+        android:id="@+id/goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Goals"
+        android:icon="@drawable/baseline_cloud_done_24"/>
+</menu>
