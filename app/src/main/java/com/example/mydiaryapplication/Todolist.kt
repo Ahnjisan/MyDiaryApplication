@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mydiaryapplication.databinding.ActivityTodolistBinding
 
-class Todolist() : AppCompatActivity(), TodoItemClickListener {
+class Todolist : AppCompatActivity(), TodoItemClickListener {
 
     private lateinit var binding: ActivityTodolistBinding
     private lateinit var taskViewModel: Todoviewmodel
@@ -26,10 +26,10 @@ class Todolist() : AppCompatActivity(), TodoItemClickListener {
     }
     private fun setRecyclerview(){
         val Todolist = this
-        taskViewModel.items.observe(this){
+        taskViewModel.items.observe(this){todoItems ->
             binding.todoListRecyclerView.apply {
                 layoutManager = LinearLayoutManager(applicationContext)
-                adapter = TodoItemAdapter(it, Todolist)
+                adapter = TodoItemAdapter(todoItems ?: emptyList(), Todolist)
             }
         }
     }
