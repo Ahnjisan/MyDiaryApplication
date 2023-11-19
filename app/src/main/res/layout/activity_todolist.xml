@@ -6,46 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Todolist">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-144dp">
-
-        <ImageButton
-            android:id="@+id/gtmain_Tdl"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="left"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/calendar"
-            android:contentDescription="@string/gtmain_Tdl_description"/>
-
-        <EditText
-            android:id="@+id/todolist_date"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
-
-    </LinearLayout>
+        android:id="@+id/todoListRecyclerView"
+        android:backgroundTint="@color/design_default_color_background"
+        />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/todolist_add"
+            android:id="@+id/todolistadd"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom|right"
             android:background="?android:attr/selectableItemBackground"
             android:padding="10dp"
+            android:layout_margin="20dp"
             android:scaleType="fitCenter"
             android:src="@drawable/plus"
             android:contentDescription="@string/todolist_add_description"/>
