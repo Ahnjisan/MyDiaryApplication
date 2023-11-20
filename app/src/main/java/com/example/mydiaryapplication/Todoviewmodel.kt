@@ -23,9 +23,14 @@ class Todoviewmodel: ViewModel() {
 
         items.postValue(list)
     }
-    fun setfinish(taskitem: Todoitem){
+    fun deleteItem(todoItem: Todoitem) {
         val list = items.value
-        val Todo = list!!.find{ it.id == taskitem.id }!!
+        list?.remove(todoItem)
+        items.postValue(list)
+    }
+    fun toggleTodoComplete(todoItem: Todoitem) {
+        val list = items.value
+        list?.find { it.id == todoItem.id }?.toggleComplete()
         items.postValue(list)
     }
 }

@@ -39,7 +39,10 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
     }
 
     override fun completeTodoItem(todoItem: Todoitem) {
-        taskViewModel.setfinish(todoItem)
+        taskViewModel.toggleTodoComplete(todoItem)
+    }
+    override fun deleteTodoItem(todoItem: Todoitem) {
+        taskViewModel.deleteItem(todoItem)
     }
 
 }

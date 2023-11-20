@@ -13,17 +13,23 @@ class TodoItemViewHolder(
     fun bindTodoItem(todoItem: Todoitem)
     {
         binding.name.text = todoItem.name
-        if(todoItem.isCompleted){
-            binding.name.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        if (todoItem.isCompleted) {
+            binding.name.paintFlags = binding.name.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            binding.completeButton.setImageResource(R.drawable.checked_24)
+        } else {
+            binding.name.paintFlags = binding.name.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+            binding.completeButton.setImageResource(R.drawable.unchecked_24)
         }
-        binding.completeButton.setImageResource(todoItem.imageResource())
-        binding.completeButton.setColorFilter(todoItem.imageColor(context))
 
-        binding.completeButton.setOnClickListener{
+        binding.completeButton.setOnClickListener {
             clickListener.completeTodoItem(todoItem)
+            bindTodoItem(todoItem)
         }
         binding.todoCellContainer.setOnClickListener {
             clickListener.completeTodoItem(todoItem)
+        }
+        binding.deleteButton.setOnClickListener {
+            clickListener.deleteTodoItem(todoItem)
         }
     }
 }
