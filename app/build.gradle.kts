@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -41,7 +42,10 @@ android {
 
 dependencies {
 
+    implementation ("com.github.bumptech.glide:glide:5.0.0-rc01")
+    kapt ("com.github.bumptech.glide:compiler:5.0.0-rc01")
     implementation ("com.google.firebase:firebase-database-ktx")
+    implementation ("com.google.firebase:firebase-storage-ktx:20.3.0")
     implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("androidx.core:core-ktx:1.9.0")
