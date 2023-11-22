@@ -12,7 +12,7 @@
         android:id="@+id/todoTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Todo"
+        android:text="새로운 Todo"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"

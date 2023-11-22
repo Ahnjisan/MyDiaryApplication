@@ -2,12 +2,10 @@ package com.example.mydiaryapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mydiaryapplication.databinding.ActivityTodolistBinding
+import com.google.firebase.FirebaseApp
 
 class Todolist : AppCompatActivity(), TodoItemClickListener {
 
