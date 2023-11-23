@@ -2,6 +2,7 @@ package com.example.mydiaryapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mydiaryapplication.databinding.ActivityTodolistBinding
@@ -11,7 +12,6 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
 
     private lateinit var binding: ActivityTodolistBinding
     private lateinit var taskViewModel: Todoviewmodel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTodolistBinding.inflate(layoutInflater)
@@ -21,15 +21,17 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
             NewTodoAdd(null).show(supportFragmentManager, "newTodotag")
         }
         setRecyclerview()
+
     }
-    private fun setRecyclerview(){
-        val Todolist = this
-        taskViewModel.items.observe(this){todoItems ->
-            binding.todoListRecyclerView.apply {
-                layoutManager = LinearLayoutManager(applicationContext)
-                adapter = TodoItemAdapter(todoItems ?: emptyList(), Todolist)
-            }
-        }
+    private fun setRecyclerview() {
+        val initialTodoItems = taskViewModel.items.value ?: emptyList()
+        val adapter = TodoItemAdapter(initialTodoItems, this)
+        binding.todoListRecyclerView.adapter = adapter
+        binding.todoListRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        taskViewModel.items.observe(this, Observer { todoItems ->
+            adapter.updateData(todoItems ?: emptyList())
+        })
     }
 
     override fun editTodoItem(todoItem: Todoitem) {
