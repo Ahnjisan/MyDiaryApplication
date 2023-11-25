@@ -8,7 +8,7 @@ class Todoitem (
     var name: String = "",
     var desc: String = "",
     var isCompleted: Boolean = false,
-    var id: UUID = UUID.randomUUID()
+    var id: String = UUID.randomUUID().toString()
 )
 {
     fun toggleComplete() {
