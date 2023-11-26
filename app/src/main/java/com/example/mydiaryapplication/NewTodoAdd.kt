@@ -21,7 +21,6 @@ class NewTodoAdd(var items: Todoitem?) : BottomSheetDialogFragment() {
             binding.todoTitle.text = "Edit Todo"
             val editable = Editable.Factory.getInstance()
             binding.name.text = editable.newEditable(items!!.name)
-            binding.desc.text = editable.newEditable(items!!.desc)
 
         }
         taskViewModel = ViewModelProvider(activity).get(Todoviewmodel::class.java)
@@ -37,16 +36,14 @@ class NewTodoAdd(var items: Todoitem?) : BottomSheetDialogFragment() {
 
     private fun saveAction(){
         val name = binding.name.text.toString()
-        val desc = binding.desc.text.toString()
         if(items == null){
-            val newTodo = Todoitem(name, desc)
+            val newTodo = Todoitem(name)
             taskViewModel.addItem(newTodo)
         }
         else{
-            taskViewModel.updateItem(items!!.id, name, desc)
+            taskViewModel.updateItem(items!!.id, name)
         }
         binding.name.setText("")
-        binding.desc.setText("")
         dismiss()
 
 

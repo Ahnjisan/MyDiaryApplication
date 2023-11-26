@@ -21,9 +21,16 @@ class Todoviewmodel: ViewModel() {
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val todoList = mutableListOf<Todoitem>()
-                snapshot.children.forEach {
-                    val todoItem = it.getValue(Todoitem::class.java)
-                    todoItem?.let { todoList.add(it) }
+                snapshot.children.forEach { data ->
+                    val id = data.key
+                    val name = data.child("name").getValue(String::class.java)
+                    val isCompleted = data.child("isCompleted").getValue(Boolean::class.java) ?: false // 기본값으로 false를 사용하거나 필요에 따라 다른 기본값 사용
+
+
+                    if (id != null && name != null && isCompleted != null) {
+                        val todoItem = Todoitem(name, isCompleted, id)
+                        todoList.add(todoItem)
+                    }
                 }
                 items.value = todoList
             }
@@ -38,20 +45,22 @@ class Todoviewmodel: ViewModel() {
         val newTodoKey = database.push().key
         Log.d("AddItem", "Generated key: $newTodoKey")
         newTodoKey?.let {
-            database.child(it).setValue(newTodo).addOnSuccessListener {
+            val id = it
+            val todoMap = mapOf(
+                "name" to newTodo.name,
+                "isCompleted" to newTodo.isCompleted
+            )
+            database.child(id).setValue(todoMap).addOnSuccessListener {
                 // 성공 시 필요한 동작(예: 로그 출력)
             }.addOnFailureListener {
                 // 실패 시 오류 처리
             }
         } ?: Log.e("AddItem", "Failed to generate a new key")
     }
-    fun updateItem(id: String, name: String, text: String){
-        val list = items.value
-        val Todo = list!!.find { it.id == id }!!
-        Todo.name = name
-        Todo.desc = text
-        items.postValue(list)
-        val todoMap = mapOf("name" to name, "desc" to text)
+    fun updateItem(id: String, name: String){
+        val todoMap = mapOf(
+            "name" to name
+        )
         database.child(id).updateChildren(todoMap)
             .addOnSuccessListener {
                 // 업데이트 성공 시 처리
@@ -61,18 +70,31 @@ class Todoviewmodel: ViewModel() {
             }
     }
     fun deleteItem(todoItem: Todoitem) {
-        // Firebase 데이터베이스에서 항목 삭제
-        database.child(todoItem.id).removeValue()
-            .addOnSuccessListener {
-                // 삭제 성공 시 처리
-            }
-            .addOnFailureListener {
-                // 삭제 실패 시 처리
-            }
+        val id = todoItem.id // 삭제할 데이터의 id
+        if (id != null) {
+            // 해당 id에 해당하는 데이터만 삭제합니다.
+            database.child(id).removeValue()
+                .addOnSuccessListener {
+                    // 삭제 성공 시 처리
+                }.addOnFailureListener {
+                    // 삭제 실패 시 처리
+                }
+        }
     }
     fun toggleTodoComplete(todoItem: Todoitem) {
-        val list = items.value
-        list?.find { it.id == todoItem.id }?.toggleComplete()
-        items.postValue(list)
+        todoItem.isCompleted = !todoItem.isCompleted
+
+        // Firebase Realtime Database에서 해당 필드만 업데이트합니다.
+        database.child("todoItems").child(todoItem.id).child("isCompleted").setValue(todoItem.isCompleted)
+            .addOnSuccessListener {
+                // 성공 처리
+            }
+            .addOnFailureListener {
+                // 실패 처리
+            }
+
+        // UI를 업데이트하기 위해 LiveData를 업데이트합니다.
+        items.value = items.value?.map { if (it.id == todoItem.id) todoItem else it }?.toMutableList()
+        items.postValue(items.value)
     }
 }

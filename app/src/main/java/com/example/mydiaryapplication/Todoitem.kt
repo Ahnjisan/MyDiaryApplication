@@ -6,14 +6,10 @@ import java.util.UUID
 
 class Todoitem (
     var name: String = "",
-    var desc: String = "",
     var isCompleted: Boolean = false,
-    var id: String = UUID.randomUUID().toString()
+    var id: String = ""
 )
 {
-    fun toggleComplete() {
-        isCompleted = !isCompleted
-    }
     fun imageResource(): Int = if(isCompleted) R.drawable.checked_24 else R.drawable.unchecked_24
     fun imageColor(context: Context): Int = if(isCompleted) purple(context) else black(context)
 

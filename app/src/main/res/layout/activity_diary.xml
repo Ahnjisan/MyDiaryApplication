@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:hint="제목"
         android:inputType="textCapSentences"
         android:padding="8dp"/>
@@ -17,7 +17,7 @@
     <EditText
         android:id="@+id/contentEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:hint="내용"
         android:inputType="textMultiLine"
         android:padding="8dp"/>

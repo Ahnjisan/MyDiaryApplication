@@ -39,11 +39,14 @@
 
         <ImageButton
             android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="15dp"
             android:layout_gravity="center"
-            tools:src="@android:drawable/ic_menu_delete" />
+            android:scaleType="centerInside"
+            android:contentDescription="항목 삭제"
+            android:background="@android:color/transparent"
+            android:src="@drawable/trash" />
 
     </LinearLayout>
 
