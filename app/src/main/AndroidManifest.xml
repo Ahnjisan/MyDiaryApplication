@@ -5,11 +5,14 @@
     <application
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         android:name=".MyDiaryApplication"
 >>>>>>> jisan
 =======
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
+=======
+>>>>>>> origin/hyein
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,6 +20,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/Theme.MyDiaryApplication"
 <<<<<<< HEAD
         tools:targetApi="31">
@@ -38,12 +42,22 @@
         <activity
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
             android:name=".MainActivity"
+=======
+        android:theme="@style/Theme.DiaryP"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addlecture"
+>>>>>>> origin/hyein
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             android:name=".Todolist"
@@ -58,6 +72,8 @@
 >>>>>>> jisan
 =======
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
+=======
+>>>>>>> origin/hyein
         </activity>
     </application>
 

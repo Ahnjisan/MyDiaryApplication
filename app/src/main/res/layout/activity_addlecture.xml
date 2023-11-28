@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearlayout_timetable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:fontFamily="@font/maruburibold"
+                        android:text="시간표"
+                        android:textSize="40sp" />
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/addlecture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="25dp"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/maruburibold"
+                        android:text="과목 추가"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:icon="@drawable/plus"
+                        app:iconSize="25dp"
+                        app:strokeColor="#000000"
+                        app:strokeWidth="2sp" />
+                </LinearLayout>
+
+                <GridLayout
+                    android:id="@+id/gridlayout_timetable"
+                    android:layout_width="match_parent"
+                    android:layout_height="536dp"
+                    android:layout_marginBottom="55dp"
+                    android:columnCount="6"
+                    android:orientation="horizontal"
+                    android:rowCount="13">
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="월" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="화" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="수" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="목" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="금" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="09:00" />
+
+                    <TextView
+                        android:id="@+id/mon0900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon0900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue0900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue0900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed0900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed0900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu0900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu0900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri0900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri0900"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="10:00" />
+
+                    <TextView
+                        android:id="@+id/mon1000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1000"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="11:00" />
+
+                    <TextView
+                        android:id="@+id/mon1100"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1100"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1100"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1100"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1100"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1100"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1100"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1100"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1100"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1100"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="12:00" />
+
+                    <TextView
+                        android:id="@+id/mon1200"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1200"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1200"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1200"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1200"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1200"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1200"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1200"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1200"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1200"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="13:00" />
+
+                    <TextView
+                        android:id="@+id/mon1300"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1300"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1300"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1300"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1300"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1300"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1300"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1300"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1300"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1300"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="14:00" />
+
+                    <TextView
+                        android:id="@+id/mon1400"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1400"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1400"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1400"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1400"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1400"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1400"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1400"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri400"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1400"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="15:00" />
+
+                    <TextView
+                        android:id="@+id/mon1500"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1500"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1500"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1500"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1500"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1500"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1500"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1500"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1500"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1500"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="16:00" />
+
+                    <TextView
+                        android:id="@+id/mon1600"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1600"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1600"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1600"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1600"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1600"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1600"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1600"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1600"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1600"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="17:00" />
+
+                    <TextView
+                        android:id="@+id/mon1700"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1700"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1700"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1700"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1700"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1700"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1700"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1700"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1700"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1700"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="18:00" />
+
+                    <TextView
+                        android:id="@+id/mon1800"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1800"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1800"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1800"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1800"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1800"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1800"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1800"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1800"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1800"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="19:00" />
+
+                    <TextView
+                        android:id="@+id/mon1900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon1900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue1900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue1900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed1900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed1900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu1900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu1900"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri1900"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri1900"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_rowWeight="1"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:fontFamily="@font/maruburibold"
+                        android:gravity="center"
+                        android:text="20:00" />
+
+                    <TextView
+                        android:id="@+id/mon2000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="mon2000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tue2000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="tue2000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/wed2000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="wed2000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/thu2000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="thu2000"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/fri2000"
+                        android:layout_gravity="fill"
+                        android:background="@drawable/cell"
+                        android:gravity="center"
+                        android:tag="fri2000"
+                        android:text="" />
+                </GridLayout>
+            </LinearLayout>
+        </ScrollView>

@@ -7,6 +7,7 @@ buildscript {
 plugins {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     id("com.android.application") version "8.1.1" apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 =======
@@ -24,4 +25,8 @@ buildscript{
     id("com.android.application") version "8.1.1" apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
+=======
+    id("com.android.application") version "8.1.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
+>>>>>>> origin/hyein
 }

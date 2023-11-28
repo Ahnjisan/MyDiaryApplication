@@ -1,6 +1,7 @@
 <resources>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <string name="imageButton_description">메인화면 이동</string>
     <string name="image_bt_description">사진파일 첨부</string>
@@ -64,4 +65,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
+=======
+    <string name="app_name">DiaryP</string>
+>>>>>>> origin/hyein
 </resources>

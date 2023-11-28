@@ -1,21 +1,38 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "983570920844",
     "project_id": "mydiary-69618",
     "storage_bucket": "mydiary-69618.appspot.com"
+=======
+    "project_number": "55076492680",
+    "firebase_url": "https://mydiaryp-b6d1d-default-rtdb.firebaseio.com",
+    "project_id": "mydiaryp-b6d1d",
+    "storage_bucket": "mydiaryp-b6d1d.appspot.com"
+>>>>>>> origin/hyein
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:983570920844:android:0ad0500306cb31278e52a9",
         "android_client_info": {
           "package_name": "com.example.mydiaryapplication"
+=======
+        "mobilesdk_app_id": "1:55076492680:android:89baa29cd69a6fc18ed63d",
+        "android_client_info": {
+          "package_name": "com.example.diaryp"
+>>>>>>> origin/hyein
         }
       },
       "oauth_client": [],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyBtQHu-49ghsbpAE8n5Zw5M1kb-kjXixOI"
+=======
+          "current_key": "AIzaSyAZLWtd-hijlhE1R3qlbK3MgsfMFDQS6HY"
+>>>>>>> origin/hyein
         }
       ],
       "services": {

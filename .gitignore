@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/hyein
 *.iml
 .gradle
 /local.properties
@@ -18,6 +21,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+<<<<<<< HEAD
 =======
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
 # Gradle files
@@ -78,3 +82,5 @@ local.properties
 =======
 >>>>>>> 48a1ad2fef934cfc20f162033856d3b5ce97fb53
 >>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
+=======
+>>>>>>> origin/hyein
