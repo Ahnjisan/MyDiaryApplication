@@ -4,9 +4,12 @@
 
     <application
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         android:name=".MyDiaryApplication"
 >>>>>>> jisan
+=======
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDiaryApplication"
+<<<<<<< HEAD
         tools:targetApi="31">
         <activity
             android:name=".DiaryActivity"
@@ -26,6 +30,13 @@
             android:label="@string/title_activity_diary_activiy"
             android:theme="@style/Theme.MyDiaryApplication" />
         <activity
+=======
+        tools:targetApi="34">
+        <activity
+            android:name=".SubDiary"
+            android:exported="false" />
+        <activity
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -33,6 +44,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
 =======
             android:name=".Todolist"
             android:exported="true"
@@ -44,6 +56,8 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
 >>>>>>> jisan
+=======
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
         </activity>
     </application>
 

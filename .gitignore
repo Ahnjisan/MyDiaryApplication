@@ -1,6 +1,25 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+=======
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
 # Gradle files
 .gradle/
 build/
@@ -34,6 +53,7 @@ google-services.json
 
 # Android Profiling
 *.hprof
+<<<<<<< HEAD
 =======
 >>>>>>> jisan
 *.iml
@@ -55,3 +75,6 @@ local.properties
 =======
 >>>>>>> 39dc906 (first commit)
 >>>>>>> jisan
+=======
+>>>>>>> 48a1ad2fef934cfc20f162033856d3b5ce97fb53
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238

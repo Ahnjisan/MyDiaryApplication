@@ -44,5 +44,4 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
     override fun deleteTodoItem(todoItem: Todoitem) {
         taskViewModel.deleteItem(todoItem)
     }
-
 }

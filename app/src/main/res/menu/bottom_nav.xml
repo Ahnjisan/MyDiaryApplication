@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="홈"
+        android:icon="@drawable/house"/>
+    <item
+        android:id="@+id/schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="일정"
+        android:icon="@drawable/list"/>
+    <item
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Todo list"
+        android:icon="@drawable/todolist"/>
+
+    <item
+        android:id="@+id/diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="일기"
+        android:icon="@drawable/notes"/>
+
+    <item
+        android:id="@+id/timetable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="시간표"
+        android:icon="@drawable/calendar"/>
+</menu>
