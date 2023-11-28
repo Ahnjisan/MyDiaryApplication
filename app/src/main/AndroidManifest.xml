@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+<<<<<<< HEAD
+=======
+        android:name=".MyDiaryApplication"
+>>>>>>> jisan
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,6 +20,7 @@
             android:name=".DiaryActivity"
             android:exported="false" />
         <activity
+<<<<<<< HEAD
             android:name=".DiaryActiviy"
             android:exported="false"
             android:label="@string/title_activity_diary_activiy"
@@ -28,6 +33,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+=======
+            android:name=".Todolist"
+            android:exported="true"
+            android:label="@string/title_activity_todolist"
+            android:theme="@style/Theme.MyDiaryApplication" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+>>>>>>> jisan
         </activity>
     </application>
 

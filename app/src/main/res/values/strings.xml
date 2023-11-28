@@ -1,4 +1,11 @@
 <resources>
+<<<<<<< HEAD
+=======
+    <string name="imageButton_description">메인화면 이동</string>
+    <string name="image_bt_description">사진파일 첨부</string>
+    <string name="todolist_add_description">todolist 추가</string>
+    <string name="gtmain_Tdl_description">메인화면 이동</string>
+>>>>>>> jisan
     <string name="app_name">My Diary Application</string>
     <string name="title_activity_diary_activiy">DiaryActiviy</string>
     <!-- Strings used for fragments for navigation -->
@@ -43,4 +50,12 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+<<<<<<< HEAD
+=======
+    <string name="title_activity_todolist">Todolist</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="place_holder">Place Holder</string>
+    <string name="checkbox">CheckBox</string>
+>>>>>>> jisan
 </resources>

@@ -1,15 +1,28 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+<<<<<<< HEAD
+=======
+    id("com.google.gms.google-services")
+    id ("kotlin-kapt")
+>>>>>>> jisan
 }
 
 android {
     namespace = "com.example.mydiaryapplication"
+<<<<<<< HEAD
     compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.mydiaryapplication"
         minSdk = 24
+=======
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.mydiaryapplication"
+        minSdk = 33
+>>>>>>> jisan
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -33,20 +46,44 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+<<<<<<< HEAD
     buildFeatures {
         viewBinding = true
+=======
+    viewBinding{
+        enable = true
+>>>>>>> jisan
     }
 }
 
 dependencies {
 
+<<<<<<< HEAD
+=======
+    implementation ("com.github.bumptech.glide:glide:5.0.0-rc01")
+    kapt ("com.github.bumptech.glide:compiler:5.0.0-rc01")
+    implementation ("com.google.firebase:firebase-database-ktx")
+    implementation ("com.google.firebase:firebase-storage-ktx:20.3.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-analytics")
+>>>>>>> jisan
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+<<<<<<< HEAD
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+=======
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
+    implementation("com.google.firebase:firebase-common-ktx:20.4.2")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+>>>>>>> jisan
