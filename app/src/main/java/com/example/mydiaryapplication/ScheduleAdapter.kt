@@ -3,7 +3,7 @@ package com.example.mydiaryapplication
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.diaryp.databinding.ViewscheduleBinding
+import com.example.mydiaryapplication.databinding.ViewscheduleBinding
 
 //일정 정보 저장-> 리사이클러뷰에 표시
 data class Schedule(
