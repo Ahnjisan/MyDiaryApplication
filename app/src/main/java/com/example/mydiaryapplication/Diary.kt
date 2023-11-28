@@ -1,16 +1,8 @@
 package com.example.mydiaryapplication
 
-enum class Icon {
-    GOAL,
-    LIST,
-    NOTE,
-    SCHEDULE
-}
-
-data class Diary(val s: String, val goal: Icon) {
-    val item: String = ""
-    val icon: Icon
-        get() {
-            TODO()
-        }
-}
+data class Diary(
+    var date: String = "",
+    var title: String = "",
+    var content: String = "",
+    var imageUrl: String? = null // 이미지 URL
+)

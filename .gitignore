@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 *.iml
 .gradle
 /local.properties
@@ -13,3 +18,63 @@
 .externalNativeBuild
 .cxx
 local.properties
+=======
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
+<<<<<<< HEAD
+=======
+>>>>>>> jisan
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+<<<<<<< HEAD
+=======
+>>>>>>> 39dc906 (first commit)
+>>>>>>> jisan
+=======
+>>>>>>> 48a1ad2fef934cfc20f162033856d3b5ce97fb53
+>>>>>>> 9ac5f302f074b64ebfc61793b3cde5547f45e238
