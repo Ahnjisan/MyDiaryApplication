@@ -7,7 +7,7 @@ import com.example.mydiaryapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,10 +21,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.schedule -> replaceFragment(Schedule())
                 R.id.list -> replaceFragment(Todolist())
                 R.id.diary -> replaceFragment(Diary())
-                R.id.goals -> replaceFragment(Goals())
-
+                R.id.timetable -> replaceFragment(TimetableFragment())
                 else -> {
-
+                    
                 }
             }
             true
@@ -34,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
-
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
