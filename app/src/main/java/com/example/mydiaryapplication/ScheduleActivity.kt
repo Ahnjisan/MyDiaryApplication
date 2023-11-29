@@ -1,4 +1,4 @@
-package com.example.diaryp
+package com.example.mydiaryapplication
 
 import android.app.Dialog
 import android.app.TimePickerDialog
@@ -15,7 +15,7 @@ import com.google.firebase.database.ValueEventListener
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class ScheduleActivity : AppCompatActivity() {
 
     // Firebase Realtime Database에 연결
     val database = FirebaseDatabase.getInstance()

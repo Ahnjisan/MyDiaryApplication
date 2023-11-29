@@ -1,17 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-<<<<<<< HEAD
-    <style name="Base.Theme.MyDiaryApplication" parent="Theme.Material3.DayNight.NoActionBar">
-=======
+    <style name="Base.Theme.MyDiaryApplication" parent="Theme.Material3.DayNight.NoActionBar"/>
     <style name="Base.Theme.DiaryP" parent="Theme.Material3.DayNight.NoActionBar">
->>>>>>> origin/hyein
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-<<<<<<< HEAD
     <style name="Theme.MyDiaryApplication" parent="Base.Theme.MyDiaryApplication" />
-=======
     <style name="Theme.DiaryP" parent="Base.Theme.DiaryP" />
->>>>>>> origin/hyein
 </resources>
