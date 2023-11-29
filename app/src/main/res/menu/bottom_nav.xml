@@ -28,9 +28,16 @@
         android:icon="@drawable/notes"/>
 
     <item
-        android:id="@+id/timetable"
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="시간표"
         android:icon="@drawable/calendar"/>
+
+    <item
+        android:id="@+id/goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="목표"
+        android:icon="@drawable/target"/>
 </menu>
