@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="100dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/addeventIcon"
+            android:src="@drawable/target"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/btnAddEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="일정 추가하기"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/todolistIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/list" />
+
+        <Button
+            android:id="@+id/btnTodolist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todo list 작성하기"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/diaryIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/notes" />
+
+        <Button
+            android:id="@+id/btnDiary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="일기 작성하기"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+
+    <!-- 다른 버튼들도 유사하게 추가 -->
+
+</LinearLayout>

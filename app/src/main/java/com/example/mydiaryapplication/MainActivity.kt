@@ -6,57 +6,62 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.Calendar
 import android.widget.CalendarView
+import android.widget.ImageButton
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var calendarView: CalendarView
-    private lateinit var bottomNavigationView: BottomNavigationView
+    private var selectedDate: Long = System.currentTimeMillis()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 캘린더 뷰 초기화
-        calendarView = findViewById(R.id.calendarView)
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            // 날짜가 선택될 때 수행할 로직
-            val selectedDate = Calendar.getInstance()
-            selectedDate.set(year, month, dayOfMonth)
-            handleDateSelection(selectedDate)
+        val calendarView = findViewById<CalendarView>(R.id.calendarView)
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            val calendar = Calendar.getInstance()
+            calendar.set(year, month, dayOfMonth)
+            selectedDate = calendar.timeInMillis
+        }
+        val imageButton = findViewById<ImageButton>(R.id.imageButton)
+        imageButton.setOnClickListener {
+            val intent = Intent(this, addlecture::class.java)
+            startActivity(intent)
         }
 
-        // 바텀 네비게이션 뷰 초기화
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_schedule -> {
-                    val intent = Intent(this, ScheduleActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_todo -> {
-                    val intent = Intent(this, Todolist::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_diary -> {
-                    val intent = Intent(this, DiaryActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_timetable -> {
-                    val intent = Intent(this, addlecture::class.java)
-                    startActivity(intent)
-                    // 시간표 로직
-                    true
-                }
-                else -> false
-            }
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_container, ButtonsFragment.newInstance(selectedDate))
+                .commit()
         }
     }
 
-    private fun handleDateSelection(selectedDate: Calendar) {
-        // 선택된 날짜 처리 로직
-        // 예: 선택된 날짜를 다른 액티비티나 프래그먼트에 전달
+    fun onFragmentButtonClicked(buttonId: Int) {
+        when (buttonId) {
+            R.id.btnAddEvent -> {
+                // 일정 추가하기 화면으로 이동
+                val intent = Intent(this, ScheduleActivity::class.java)
+                val sdf = SimpleDateFormat("yyyyMMdd", Locale.getDefault())
+                intent.putExtra("selectedDate", sdf.format(Date(selectedDate)))
+                startActivity(intent)
+            }
+            R.id.btnTodolist -> {
+                // Todo list 작성하기 화면으로 이동
+                val intent = Intent(this, Todolist::class.java)
+                val sdf = SimpleDateFormat("yyyyMMdd", Locale.getDefault())
+                intent.putExtra("selectedDate", sdf.format(Date(selectedDate)))
+                startActivity(intent)
+            }
+            R.id.btnDiary -> {
+                // 일기 작성하기 화면으로 이동
+                val intent = Intent(this, DiaryActivity::class.java)
+                val sdf = SimpleDateFormat("yyyyMMdd", Locale.getDefault())
+                intent.putExtra("selectedDate", sdf.format(Date(selectedDate)))
+                startActivity(intent)
+            }
+            // 다른 버튼들에 대한 처리
+        }
     }
 }

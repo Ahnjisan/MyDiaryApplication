@@ -11,12 +11,12 @@ android {
     defaultConfig {
         applicationId = "com.example.mydiaryapplication"
         minSdk = 33
-    compileSdk = 34
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
 
-    defaultConfig {
-        applicationId = "com.example.mydiaryapplication"
-        minSdk = 33
-        targetSdk = 33 }
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 
 
 
@@ -74,4 +74,4 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation("androidx.gridlayout:gridlayout:1.0.0")
-}}}
+}}

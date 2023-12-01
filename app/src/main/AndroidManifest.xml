@@ -40,6 +40,11 @@
             android:label="@string/title_activity_schedule"
             android:theme="@style/Theme.MyDiaryApplication"
             android:exported="true"/>
+        <activity
+            android:name=".DiaryActivity"
+            android:label="@string/title_activity_diary_activiy"
+            android:theme="@style/Theme.MyDiaryApplication"
+            android:exported="true"/>
     </application>
 
 </manifest>

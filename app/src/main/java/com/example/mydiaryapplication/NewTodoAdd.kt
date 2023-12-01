@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mydiaryapplication.databinding.FragmentNewTodoAddBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class NewTodoAdd(var items: Todoitem?) : BottomSheetDialogFragment() {
+class NewTodoAdd(var items: Todoitem?, val selectedDate: String) : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentNewTodoAddBinding
     private lateinit var taskViewModel: Todoviewmodel
@@ -34,19 +34,18 @@ class NewTodoAdd(var items: Todoitem?) : BottomSheetDialogFragment() {
         return binding.root
     }
 
-    private fun saveAction(){
+    private fun saveAction() {
         val name = binding.name.text.toString()
-        if(items == null){
-            val newTodo = Todoitem(name)
-            taskViewModel.addItem(newTodo)
-        }
-        else{
-            taskViewModel.updateItem(items!!.id, name)
-        }
-        binding.name.setText("")
+            if (items == null) {
+                val newTodo = Todoitem(name = name, selectedDate = selectedDate)
+                taskViewModel.addItem(newTodo)
+            } else {
+                items!!.name = name
+                // 필요한 경우 다른 속성 업데이트 로직 추가
+                taskViewModel.updateItem(items!!.id, name)
+            }
         dismiss()
-
-
     }
+
 
 }

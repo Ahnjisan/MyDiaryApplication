@@ -12,13 +12,16 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
 
     private lateinit var binding: ActivityTodolistBinding
     private lateinit var taskViewModel: Todoviewmodel
+    private var selectedDate: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTodolistBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        taskViewModel = ViewModelProvider(this).get(Todoviewmodel::class.java)
+        val selectedDate = intent.getStringExtra("selectedDate") ?: ""
+        val viewModelFactory = TodoviewmodelFactory(selectedDate)
+        taskViewModel = ViewModelProvider(this, viewModelFactory).get(Todoviewmodel::class.java)
         binding.todolistadd.setOnClickListener {
-            NewTodoAdd(null).show(supportFragmentManager, "newTodotag")
+            NewTodoAdd(null, selectedDate).show(supportFragmentManager, "newTodotag")
         }
         setRecyclerview()
 
@@ -28,14 +31,13 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
         val adapter = TodoItemAdapter(initialTodoItems, this)
         binding.todoListRecyclerView.adapter = adapter
         binding.todoListRecyclerView.layoutManager = LinearLayoutManager(this)
-
         taskViewModel.items.observe(this, Observer { todoItems ->
             adapter.updateData(todoItems ?: emptyList())
         })
     }
 
     override fun editTodoItem(todoItem: Todoitem) {
-        NewTodoAdd(todoItem).show(supportFragmentManager,"newTodoTag")
+        NewTodoAdd(todoItem, selectedDate).show(supportFragmentManager, "newTodoTag")
     }
 
     override fun completeTodoItem(todoItem: Todoitem) {

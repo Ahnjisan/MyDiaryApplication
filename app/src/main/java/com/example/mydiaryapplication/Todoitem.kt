@@ -6,8 +6,10 @@ import java.util.UUID
 
 class Todoitem (
     var name: String = "",
+    var selectedDate: String? = null,
     var isCompleted: Boolean = false,
     var id: String = ""
+
 )
 {
     fun imageResource(): Int = if(isCompleted) R.drawable.checked_24 else R.drawable.unchecked_24
