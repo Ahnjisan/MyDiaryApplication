@@ -3,6 +3,8 @@ package com.example.mydiaryapplication
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -14,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.getValue
 import java.util.Calendar
 
+@Suppress("DEPRECATION")
 class CalendarActivity: AppCompatActivity() {
     private lateinit var binding: ActivityCalendarBinding
     private val clickedDays = mutableMapOf<String, Int>()
@@ -23,6 +26,12 @@ class CalendarActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val backButton: Button = binding.backButton
+
+        backButton.setOnClickListener {
+            onBackPressed()
+        }
 
         val goalDescription = intent.getStringExtra("goalDescription")
         val selectedMonth = intent.getIntExtra("selectedMonth", Calendar.JANUARY)
@@ -41,6 +50,8 @@ class CalendarActivity: AppCompatActivity() {
         binding.calendarView.setDate(calendar)
 
         restoreState()
+
+        updateEvents()
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
