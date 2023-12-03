@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:content=".SetGoalActivity">
+
+    <EditText
+        android:id="@+id/goalDescriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Goal "
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/monthSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goalDescriptionEditText"
+        android:layout_marginTop="16dp"
+        android:entries="@array/months" />
+
+    <Button
+        android:id="@+id/saveGoalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Goal"
+        android:layout_below="@id/monthSpinner"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
