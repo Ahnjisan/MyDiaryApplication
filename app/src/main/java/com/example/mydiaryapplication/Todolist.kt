@@ -19,6 +19,7 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
         binding = ActivityTodolistBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val selectedDate = intent.getStringExtra("selectedDate") ?: ""
+        // viewModel 인스턴스 생성(날짜 데이터를 전달하기 위해서)
         val viewModelFactory = TodoviewmodelFactory(selectedDate)
         taskViewModel = ViewModelProvider(this, viewModelFactory).get(Todoviewmodel::class.java)
         binding.todolistadd.setOnClickListener {
@@ -36,10 +37,13 @@ class Todolist : AppCompatActivity(), TodoItemClickListener {
 
     }
     private fun setRecyclerview() {
+        // taskviewmodel에서 할일 데이터 목록을 가져옴
         val initialTodoItems = taskViewModel.items.value ?: emptyList()
+        // recyclerview에서 데이터와 뷰를 연결
         val adapter = TodoItemAdapter(initialTodoItems, this)
         binding.todoListRecyclerView.adapter = adapter
         binding.todoListRecyclerView.layoutManager = LinearLayoutManager(this)
+        // LiveData에 대한 관찰자, 변경이 있을 때마다 UI 업데이트
         taskViewModel.items.observe(this, Observer { todoItems ->
             adapter.updateData(todoItems ?: emptyList())
         })

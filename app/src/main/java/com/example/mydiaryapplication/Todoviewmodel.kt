@@ -18,6 +18,7 @@ class Todoviewmodel(private val selectedDate: String): ViewModel() {
     init {
         loadTodoItems(selectedDate)
     }
+    // selectedDate에 해당하는 자식 노드를 불러옴
     private fun loadTodoItems(selectedDate: String) {
         database.child(selectedDate).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -41,7 +42,7 @@ class Todoviewmodel(private val selectedDate: String): ViewModel() {
             }
         })
     }
-
+    // selectedDate 아래에 데이터들을 저장
     fun addItem(newTodo: Todoitem){
         newTodo.selectedDate?.let { selectedDate ->
             val newTodoKey = database.child(selectedDate).push().key
@@ -68,6 +69,7 @@ class Todoviewmodel(private val selectedDate: String): ViewModel() {
                 // 업데이트 실패 시 처리
             }
     }
+    // 데이터들의 상위 노드의 key가 id와 같으므로 id를 검색해서 특정 데이터를 삭제
     fun deleteItem(todoItem: Todoitem) {
         val id = todoItem.id // 삭제할 데이터의 id
         if (id != null) {
@@ -101,6 +103,7 @@ class Todoviewmodel(private val selectedDate: String): ViewModel() {
         items.postValue(items.value)
     }
 }
+// viewmodel에 selectedDate를 전달하기 위한 코드
 class TodoviewmodelFactory(private val selectedDate: String) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(Todoviewmodel::class.java)) {
